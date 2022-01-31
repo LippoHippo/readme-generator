@@ -43,7 +43,7 @@ const questions = [
     {
         type   : "input",
         name   : "description",
-        message: "Describe what this application does",
+        message: "Describe what this application does.",
         validate: describeInput => {
             if (describeInput) {
                 return true;
@@ -56,7 +56,7 @@ const questions = [
     {
         type   : "input",
         name   : "test",
-        message: "Type the command needed to test this project in the terminal",
+        message: "Type the command needed to test this project in the terminal.",
         validate: testInput => {
             if (testInput) {
                 return true;
@@ -69,7 +69,7 @@ const questions = [
     {
         type   : "input",
         name   : "installation",
-        message: "Explain the terminal npm procedure",
+        message: "Explain the terminal npm procedure.",
         validate: installInput => {
             if (installInput) {
                 return true;
@@ -82,12 +82,12 @@ const questions = [
     {
         type   : "input",
         name   : "usage",
-        message: "Please explain how to use this app"
+        message: "Please explain how to use this app."
     },
     {
         type   : "checkbox",
         name   : "license",
-        message: "Select which license used for this project",
+        message: "Select which license used for this project.",
         choices: ['MIT', 'ISC'],
         // renderLicenseBadge(license);,
         // renderLicenseLink(license);,
@@ -107,7 +107,7 @@ const questions = [
     {
         type   : "input",
         name   : "questions",
-        message: "If you have any questions about this repo please open an issue /or contact lippohippo at: anthonyw.byers@gmail.com"
+        message: "If you have any questions about this repo please open an issue /or contact lippohippo at: anthonyw.byers@gmail.com."
     },
     {
         type: "confirm",
