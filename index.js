@@ -2,6 +2,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
+// const renderLicenseBadge = require('./utils/generateMarkdown');
+// const renderLicenseLink = require('./utils/generateMarkdown');
+// const renderLicenseSection = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -52,8 +55,16 @@ const questions = [
     },
     {
         type   : "input",
-        name   : "",
-        message: ""
+        name   : "test",
+        message: "Type the command needed to test this project in the terminal",
+        validate: testInput => {
+            if (testInput) {
+                return true;
+            } else {
+                console.log('Please give a terminal command to start test (Hint: npm)');
+                return false;
+            }
+        }
     },
     {
         type   : "input",
@@ -71,17 +82,27 @@ const questions = [
     {
         type   : "input",
         name   : "usage",
-        message: "Explain the purpose of this "
+        message: "Please explain how to use this app"
     },
     {
-        type   : "input",
+        type   : "checkbox",
         name   : "license",
-        message: ""
+        message: "Select which license used for this project",
+        choices: ['MIT', 'ISC'],
+        // renderLicenseBadge(license);,
+        // renderLicenseLink(license);,
+        // renderLicenseSection(license);
     },
     {
         type   : "input",
         name   : "contributing",
-        message: ""
+        message: "Who contributed to the project?"
+    },
+    {
+        type: "confirm",
+        name: "confrimAddContributer",
+        message: "Did anyone else contribute to this project?",
+        default: false
     },
     {
         type   : "input",
